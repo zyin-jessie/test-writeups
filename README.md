@@ -15,7 +15,7 @@ The writeups here are created for learning purposes only and may not always repr
 
 This repo may include writeups covering:
 
-- CTF challenges (TryHackMe, HackTheBox, etc.)
+- CTF challenges
 - Web exploitation scenarios
 - Privilege escalation techniques
 - Blue team / incident analysis simulations
