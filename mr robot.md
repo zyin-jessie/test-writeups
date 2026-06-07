@@ -238,8 +238,6 @@ After obtaining root access, I navigated to the root user's directory and retrie
 04787ddef27c3dee1ee161b21670b4e4
 ```
 
----
-
 ## Conclusion
 
 The Mr. Robot CTF is an excellent room for learning how attackers chain multiple weaknesses together to achieve complete system compromise. While none of the individual vulnerabilities are particularly advanced, their combination creates a realistic attack path that mirrors real-world penetration testing engagements.
