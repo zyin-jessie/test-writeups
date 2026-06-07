@@ -1,13 +1,10 @@
----
-title: "Mr Robot CTF"
-description: "A walkthrough of the TryHackMe Mr. Robot CTF room, covering reconnaissance, web enumeration, WordPress exploitation, credential attacks, post-exploitation enumeration, and privilege escalation to root."
----
+# Mr Robot CTF
+
+A walkthrough of the TryHackMe Mr. Robot CTF room, covering reconnaissance, web enumeration, WordPress exploitation, credential attacks, post-exploitation enumeration, and privilege escalation to root.
 
 Published: 2025-11-06
 
----
-
-# Reconnaissance
+## Reconnaissance
 
 The first step in the assessment was to identify exposed services and map out the target’s attack surface.
 
@@ -33,9 +30,7 @@ The scan revealed three open ports on the target:
 
 This indicated that the primary attack surface was the web service running on port 80/443.
 
----
-
-# Web Enumeration
+## Web Enumeration
 
 After identifying the web server, the next step was to inspect the website manually.
 Upon visiting the target, a custom Mr. Robot-themed landing page appeared.
@@ -94,10 +89,7 @@ The first key was successfully obtained from the exposed file:
 073403c8a58a1f80d943455fb30724b9
 ```
 
-
----
-
-# Credential Discovery
+## Credential Discovery
 
 ### Login Form Analysis
 
@@ -158,9 +150,7 @@ hydra -l Elliot -P wordlist.txt TARGET_IP http-post-form "/wp-login.php:log=^USE
 
 ![hydra-password](/images/mr-robot/hydra-password.png)
 
----
-
-# Initial Access
+## Initial Access
 
 ### Remote Code Execution
 
@@ -216,9 +206,7 @@ Once logged in as the `robot` user, I accessed the home directory and located th
 822c73956184f694993bede3eb39f959
 ```
 
----
-
-# Privilege Escalation
+## Privilege Escalation
 
 ### Enumeration
 
@@ -252,7 +240,7 @@ After obtaining root access, I navigated to the root user's directory and retrie
 
 ---
 
-# Conclusion
+## Conclusion
 
 The Mr. Robot CTF is an excellent room for learning how attackers chain multiple weaknesses together to achieve complete system compromise. While none of the individual vulnerabilities are particularly advanced, their combination creates a realistic attack path that mirrors real-world penetration testing engagements.
 
