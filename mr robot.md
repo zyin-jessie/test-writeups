@@ -109,7 +109,7 @@ I started by inspecting the login page using the browser's developer tools to se
 
 ![login-parameter](/images/mr-robot/parameter.png)
 
-As a quick test, I attempted to log in using the commonly used credentials admin for both the username and password.
+As a quick test, I attempted to log in using the commonly used credentials `admin` for both the username and password.
 The application returned an `Invalid username` message, confirming login behavior and enabling enumeration.
 
 ![invalid-response](/images/mr-robot/invalid-response.png)
@@ -150,7 +150,7 @@ After identifying the valid username `Elliot`, I attempted to log in again and o
 
 Using this information, I configured Hydra to perform a password brute-force attack against the `Elliot` account. The optimized wordlist was supplied as the password list, while the new error message was used as the failure condition to identify a successful login.
 
-The enumeration successfully revealed a valid username: `ER28-0652`.
+The enumeration successfully revealed a valid password: `ER28-0652`.
 
 ```bash title="bash"
 hydra -l Elliot -P wordlist.txt TARGET_IP http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^:F=The password you entered for the username"
